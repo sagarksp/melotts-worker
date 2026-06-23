@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: syncwave-melotts-worker
+    env: docker
+    plan: standard
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: TTS_DEVICE
+        value: cpu
+      - key: MELOTTS_DEFAULT_LANGUAGE
+        value: EN
+      - key: MAX_TEXT_CHARS
+        value: 6000
+      - key: CORS_ORIGINS
+        value: "*"
